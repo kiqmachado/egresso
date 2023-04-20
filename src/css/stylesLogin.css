@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@100;400;700&family=Open+Sans:wght@300;400;700&family=Satisfy&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
+*{
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+    text-decoration: none;     
+}
+.containerLogin{
+    width: 100%;
+    height: 100vh;
+    background: #ECECEC;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.tituloLogin h1{   
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 45px;   
+    color: #000000;
+    margin-bottom: 50px;
+}
+.imagemLogin img{
+    width: 170px;
+    height: 170px;
+}
+.imagemLogin{
+    margin-top: -400px;
+    position: absolute;
+
+}
+.acessoUsuario{
+    display: flex;
+    flex-direction: column;
+    background: #39ACC8;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 60%;
+    border-radius: 30px;
+
+    /*deixar assim ou não??????????????????????????*/
+    border-width: 0px 1px 1px 0px;
+    border-style: solid;
+    border-color: #000000;
+    border-radius: 30px;
+}
+.login{
+    display: flex;
+    width: 60vh;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:center;
+    gap: 10px;
+}
+
+.inputA{
+    width: 500px;
+    height: 20%;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    font-family: "Montserrat";
+    font-size: 15px;
+    text-indent: 17px;
+}
+
+.formLogin{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+.linksLogin{
+    border: none;
+    text-decoration: none;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    opacity: 0.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:center;
+    gap: 10px;
+}
+.linksLogin a{
+    color: #fff;
+}
+.btnEnviarLogin{
+    width: 150px;
+    height: 40px;
+    background: #143D47;
+    border-radius: 10px;
+    color: #fff;
+    font-family: 'Bebas Neue';
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+/*CSS Responsividade*/
+@media only screen and (min-width: 280px) and (max-width: 1200px){
+    .tituloLogin h1{   
+        font-size: 40px; 
+        margin-bottom: 100px;  
+    }
+    .imagemLogin img{
+        width: 100px;
+        height: 100px;
+    }
+    .imagemLogin{
+        margin-top: -80px;
+    }
+    .acessoUsuario{
+        width: 70%;
+        height: 45%;
+    }
+    input{
+        height: 8%;
+        font-size: 18px;
+    }
+}    
