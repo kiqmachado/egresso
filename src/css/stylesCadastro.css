@@ -21,7 +21,7 @@
     font-weight: 400;
     font-size: 45px;   
     color: #000000;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
 }
 .imagemCadastro img{
     width: 170px;
@@ -37,14 +37,12 @@
     background: #39ACC8;
     justify-content: space-around;
     align-items: center;
+    margin-bottom: 30px;
     width: 25%;
-    height: 80%;
+    height: 75%;
     border-radius: 30px;
-
-    /*deixar assim ou não??????????????????????????*/
-    border-width: 0px 1px 1px 0px;
-    border-style: solid;
-    border-color: #000000;
+    box-shadow: 0 8px 32px 0 rgba(7, 7, 7, 0.37);    
+    -webkit-backdrop-filter: blur( 7.5px );
     border-radius: 30px;
 }
 .containerInfo{
@@ -69,28 +67,31 @@
     font-family: 'Montserrat';
     font-size: 15px;
 } 
-.linksCadastro{
+.inputB{
+    width: 80%;
+    height: 6%;
+    background: #E4E4E4;
+    border-radius: 10px;
+    padding: 10px;
     border: none;
-    text-decoration: none;
     font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 17px;
-    opacity: 0.5;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items:center;
-    gap: 10px;
+    font-size: 15px;
+} 
+.EnviarCadastro{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  gap:5px;
+  margin-bottom: 20px;
 }
-.linksCadastro a{
-    color: #fff;
+.label-space {
+margin-right: 10px; /* Adapte o valor conforme necessário */
 }
-.btnEnviarCadastro{
-    width: 150px;
+.btnEnviarCadastro, .btnEnviarCadastroVoltar{
+    width: 60%;
     height: 40px;
-    margin-top: 10px;
-    margin-bottom: 10px;
     background: #143D47;
     border-radius: 10px;
     color: #fff;
@@ -99,35 +100,98 @@
     border: none;
     cursor: pointer;
 }
-.termosUso{
-    display: flex;
-    flex-direction: row;
-    justify-content:flex-start;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
+.btnEnviarCadastroVoltar{
+  background-color: #ffcb6a;
+  border-width: 0px 1px 1px 0px;
+  border-style: solid;
+  border-color: #5d5b5b5e;
 }
-#checkbox{
-   background-color: rgb(135, 222, 181);
-    width: 10%;
-    height: 20px;
-    margin-left: 30px ;
+.btnEnviarCadastro:hover{
+  background-color: #143d47ca;
+}
+.btnEnviarCadastroVoltar:hover{
+  background-color: #ffcb6acb;
 }
 
-.termosUso label{
+
+.termosUso {
+    margin-top: 20px;
+    display: flex;
+    width: 80%;
+    align-items: center;
+    justify-content: flex-start;
+    margin-right: 5px;
+  }
+  
+  
+  .checkbox {
+    background-color: rgb(135, 222, 181);
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+  }
+  
+  .termosDeUso {
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 15px;
     color: #000000;
-    text-align: center;    
-}
+  }
+  
+  .tagA {
+    text-decoration: none;
+    color: #ffcb6a;
+    font-weight: bold;
+  }
+  
+  .tagA:hover {
+    text-decoration: underline;
+  }
+  
+  .divErrorC{
+    flex-direction: row;
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    align-items: top;
+    text-align: center;
+    height: 50px;
+  }
+
+.errorC {
+    color: #FF0;
+  }
+  
+  .shakeC {
+    animation: shakeC 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+  }
+  
+  @keyframes shakeC {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      transform: translateX(-5px);
+    }
+    20%,
+    40%,
+    60%,
+    80% {
+      transform: translateX(5px);
+    }
+  }
 
 /*CSS Responsividade*/
-@media only screen and (min-width: 280px) and (max-width: 1200px){
+@media only screen and (min-width: 200px) and (max-width: 1200px){
     .tituloCadastro h1{   
         font-size: 40px; 
-        margin-bottom: 100px;  
+        margin-bottom: 50px;  
     }
     .imagemCadastro img{
         width: 100px;
@@ -139,14 +203,11 @@
     }
     .acessoUsuario{
         width: 70%;
-        height: 60%;
+        height: auto;
+        margin-bottom: 30px;
     }
     .inputA{
         height: 5%;
         font-size: 15px;
-    }
-    .btnEnviarCadastro{
-        width: 150px;
-        height: 30px;
     }
 }    

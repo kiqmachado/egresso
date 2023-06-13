@@ -1,40 +1,53 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom';
 import Login from '../pages/Login';
-import Register from '../pages/Register';
-import Intro from '../pages/Intro';
+import Registro from '../pages/Registro';
+import Home from '../pages/Home';
 import Formulario from '../pages/Formulario';
 import Depoimentos from '../pages/Depoimentos';
 import Usuario from '../pages/Usuario'
-import { updateCurrentUser } from 'firebase/auth';
+import TermosDeUso from '../pages/TermosDeUso';
+
+import Adm from '../pages/Adm';
+import AdmEgressos from '../pages/AdmEgressos';
+import AdmQuestionario from '../pages/AdmQuestionario';
+
+import RecuperaSenha from '../pages/RecuperaSenha';
 
 import ProtectedRoute from '../components/ProtectedRoute';
-import PublicRoute from '../components/PublicRoute';
+import AdmRoute from '../components/AdmRoute';
+
 import { AuthContextProvider } from './../context/AuthContext';
+import { AdmContextProvider } from '../context/AdmContext';
 
 function Routers() {
-
-const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
-
-const RequireAuth = ({ children }) => {
-  return updateCurrentUser ? (children) : <Navigate to="login"/>
-}
-  
   return (
-    <AuthContextProvider>
-      <Router>
-        <Routes>
-        <Route  path="/" element={<Intro/>}/>
-          <Route  path="/login" element={<Login/>}/>
-          <Route  path="/register" element={<Register/>}/>
-          <Route  path="/depoimentos" element={<Depoimentos/>}/>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/registro" element={<Registro />} />
+        <Route path="/depoimentos" element={<Depoimentos />} />
+        <Route path="/termos" element={<TermosDeUso />} />
 
-          <Route  path="/create" element={<ProtectedRoute><Formulario/></ProtectedRoute>}/>
-          <Route  path="/usuario" element={<ProtectedRoute><Usuario/></ProtectedRoute>}/>
+        <Route element={<AuthContextProvider><Outlet /></AuthContextProvider>}>
+          <Route path="/criar" element={<ProtectedRoute><Formulario /></ProtectedRoute>} />
+          <Route path="/usuario" element={<ProtectedRoute><Usuario /></ProtectedRoute>} />
+        </Route>
 
-        </Routes>
-      </Router>
-    </AuthContextProvider>
+        <Route path="/recuperarSenha" element={<RecuperaSenha />} />
+        
+        <Route element={<AdmContextProvider><Outlet /></AdmContextProvider>}>
+       
+          <Route exact path="/adm" element={<AdmRoute><Adm /></AdmRoute>} />
+          <Route exact path="/adm/depoimentos" element={<AdmRoute><AdmEgressos /></AdmRoute>} />
+          <Route exact path="adm/questionario" element={<AdmRoute><AdmQuestionario /></AdmRoute>} />
+          <Route path="adm/*" element={<AdmRoute><Adm/></AdmRoute>} />
+        </Route>
+        
+        <Route path="/*" element={<Home />} />
+      </Routes>
+    </Router>
   );
 }
 

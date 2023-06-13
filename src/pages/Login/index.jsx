@@ -1,76 +1,132 @@
 import React, { useState } from 'react';
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from './../../firebase-config'
+import { sendEmailVerification, signInWithEmailAndPassword } from 'firebase/auth';
+import { auth, db } from './../../firebase-config'
 import { useNavigate } from "react-router-dom";
-
-
 import Header from './../../components/Header';
+import Footer from './../../components/Footer';
 import './../../css/stylesLogin.css'
 import { UserAuth } from '../../context/AuthContext';
+import { doc, getDoc } from 'firebase/firestore';
 
 
 function Login( isAuth ) {
 
 const navigate = useNavigate();
 
-let authorization = UserAuth();
+
+const [load, setLoad] = useState(false);
 const [email, setEmail] = useState("");
 const [password, setPassword] = useState("");
 const [error, setError] = useState(null);
+const [showPassword, setShowPassword] = useState(false);
+
+const togglePasswordVisibility = (e) => {
+  e.preventDefault();
+  setShowPassword(!showPassword);
+};
 
 const login = async (e) => {
   e.preventDefault();
-  signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      localStorage.setItem("isAuth", true);
-      const user = userCredential.user;
-      navigate('/depoimentos')
-      // ...
-    })
-  .catch((error) => {
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    const user = userCredential.user;
+
+    if (!user.emailVerified) {
+
+      setError("Seu email ainda não foi verificado.");
+      setTimeout(() => { setError(""); }, 3000);
+
+    } else {
+    
+    const userDocRef = doc(db, 'users', user.uid);
+    const userDoc = await getDoc(userDocRef);
+    const userData = userDoc.data();
+
+    if (userData.isAdmin) {
+      navigate('/adm');
+    } else {
+      navigate('/depoimentos');
+      }
+    }
+  } catch (error) {
     const errorCode = error.code;
-    const errorMessage = error.message;
-  });
+    if (errorCode === 'auth/user-not-found') {
+      setError('Usuário não encontrado. Verifique suas credenciais.');
+    } else if (errorCode === 'auth/wrong-password') {
+      setError('Senha incorreta. Verifique suas credenciais.');
+    } else {
+      setError('Ocorreu um erro durante o login. Por favor, tente novamente.');
+    }
+    setTimeout(() => {
+      setError("");
+    }, 3000);
+  }
+};
+
+
+if(!load){
+  setTimeout(() => {
+      setLoad(true);
+    }, 1000);
+
+    return(<></>)
 }
+
+
 
 return (
   <div>
-  <title>Egresso</title>
-  <header id="header" ><Header/></header>
-  <main id="login">
-    <div className="containerLogin">
-      <div className="tituloLogin">
-        <h1>login do usuário</h1>
-      </div>
-      <div className="acessoUsuario">
-                <div className="imagemLogin">
-                  <img src={require("./../../image/egresso.png")} alt="Logo do egresso" />  
-                </div>
-                
+    <header id="header" ><Header/></header>
 
-                <div className="formLogin">
-                <form onSubmit={login} >
-                  <div className="login">
-                    <input className='inputA' id="email" type="text" placeholder="Email" value={email} onChange={(e)=>{setEmail(e.target.value)}}  />
-                    <input className='inputA' id="password" type="password" placeholder="Senha" value={password} onChange={(e)=>{setPassword(e.target.value)}} />
-                  </div>
-                  <br/>    <br/>
-                  
-                    <div className="linksLogin">
-                        <a href="/register">Não tenho cadastro</a>
-                        <a href="#">Esqueci minha senha</a>
+      <main id="login">
+        <div className="containerLogin">
 
-
-                    </div>
-                    <br/>
-                    <div className="formLogin"><button className="btnEnviarLogin">Entrar</button></div>
-                </form>
-              </div>
+            <div className="tituloLogin">
+              <h1>login do usuário</h1>
             </div>
+
+         <div className="containerLoginConteudo"> 
+
             
-    </div>
-  </main>
-  <footer id="footer" />
+
+            <div className="imgContentFormLogin">
+              <img src={require("./../../image/egresso.png")} alt="Logo do egresso" /> 
+            </div>
+
+            <div className="contentFormLogin">
+
+              <form className="formLogin" onSubmit={login}>
+                <div className="inputLogin">
+                  <input className='inputLoginDados' id="email" type="text" placeholder="Email" value={email} onChange={(e)=>{setEmail(e.target.value)}}  />
+                  <input
+                    className="inputLoginDados"
+                    id="password"
+                    type={showPassword ? 'text' : 'password'}
+                    placeholder="Senha"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                <button className="togglePasswordLogin" onClick={togglePasswordVisibility}>
+                    <p>{showPassword ? 'Ocultar senha' : 'Ver senha'} </p>
+                  </button>         
+                </div>  
+                <div className="linksLogin">
+                  <a href="/registro">Não tenho cadastro</a>
+                  <a href="/recuperarSenha">Esqueci minha senha</a>
+                  <div className="divErrorL"><p className={`errorL ${error ? "shakeL" : ""}`}>{error}</p></div>
+                </div>
+                <div className="btnFormLogin">
+                  <button className="btnEnviarLogin">Entrar</button>
+                </div>
+              </form>
+
+            </div>
+
+          </div>        
+        </div>
+      </main>
+
+    <footer id="footer" ><Footer/></footer>
 </div>
 
   );

@@ -7,97 +7,93 @@
     text-decoration: none;     
 }
 .containerLogin{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100vh;
     background: #ECECEC;
+}
+.containerLoginConteudo{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-.tituloLogin h1{   
-    font-family: 'Bebas Neue';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 45px;   
-    color: #000000;
-    margin-bottom: 50px;
-}
-.imagemLogin img{
-    width: 170px;
-    height: 170px;
-}
-.imagemLogin{
-    margin-top: -400px;
-    position: absolute;
-
-}
-.acessoUsuario{
-    display: flex;
-    flex-direction: column;
-    background: #39ACC8;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    height: 100%;
+} 
+.contentFormLogin{
+    background-color: #39ACC8;
     width: 25%;
-    height: 60%;
+    height: 380px;
     border-radius: 30px;
-
-    /*deixar assim ou não??????????????????????????*/
-    border-width: 0px 1px 1px 0px;
-    border-style: solid;
-    border-color: #000000;
-    border-radius: 30px;
+    margin-bottom: 100px;
+    box-shadow: 0 8px 32px 0 rgba(7, 7, 7, 0.37);    
+    -webkit-backdrop-filter: blur( 7.5px );
 }
-.login{
-    display: flex;
-    width: 60vh;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items:center;
-    gap: 10px;
-}
-
-.inputA{
-    width: 500px;
-    height: 20%;
-    background: #ffffff;
-    border-radius: 10px;
-    padding: 10px;
-    border: none;
-    font-family: "Montserrat";
-    font-size: 15px;
-    text-indent: 17px;
-}
-
 .formLogin{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.inputLogin{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+}
+.inputLoginDados{
+    margin: 10px;
     width: 100%;
-    height: auto;
+    background: #ffffff;
+    border-radius: 10px;
+    border: none;
+    font-family: "Montserrat";
+    font-size: 15px;
+    
+}
+.togglePasswordLogin{
+    background-color: #39ACC8;
+
+}
+.togglePasswordLogin p {
+    font-family: 'Bebas Neue';
+    cursor: pointer;
+    font-size: 15px;
+    margin-left: 10px;
+
+}
+.inputLogin button{
+    width: 100%;
+    height: 20px;
+    border: none;
+    margin-top: -10px;
+    margin-bottom: 20px;
+
 }
 
 .linksLogin{
-    border: none;
-    text-decoration: none;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 17px;
-    opacity: 0.5;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items:center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    margin-top: 20px;
+    padding: 10px;
     gap: 10px;
 }
 .linksLogin a{
     color: #fff;
+    font-family: "Montserrat";
 }
 .btnEnviarLogin{
     width: 150px;
-    height: 40px;
+    height: 35px;
     background: #143D47;
     border-radius: 10px;
     color: #fff;
@@ -105,27 +101,87 @@
     font-size: 20px;
     border: none;
     cursor: pointer;
+    margin-top: 50px;
+}
+.btnEnviarLogin:hover{
+    background-color: #143d47ca;
 }
 
-/*CSS Responsividade*/
-@media only screen and (min-width: 280px) and (max-width: 1200px){
-    .tituloLogin h1{   
-        font-size: 40px; 
-        margin-bottom: 100px;  
+.tituloLogin h1{
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 45px;   
+    color: #000000;
+    margin-top: 50px;
+    margin-bottom: -50px;
+}
+.imgContentFormLogin{
+    position: relative;
+    width: auto;
+    height: 120px;
+}
+.imgContentFormLogin img{
+    width: 170px;
+    height: 170px;
+}
+
+.divErrorL{
+    flex-direction: row;
+    display: flex;
+    width: 60%;
+    justify-content: center;
+    align-items: top;
+    text-align: center;
+    height: 50px;
+  }
+
+.errorL {
+    color: #ffcb6a;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-size: 16px;
+  }
+  
+  .shakeL {
+    animation: shakeL 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+  }
+  @keyframes shakeL {
+    0%,
+    100% {
+      transform: translateX(0);
     }
-    .imagemLogin img{
-        width: 100px;
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      transform: translateX(-5px);
+    }
+    20%,
+    40%,
+    60%,
+    80% {
+      transform: translateX(5px);
+    }
+  }
+
+/*CSS Responsividade*/
+@media only screen and (min-width: 200px) and (max-width: 1200px){
+    .tituloLogin h1{   
+        font-size: 40px;  
+    }
+    .imgContentFormLogin img{
+        width: 150px;
+        height: 150px;
+    }
+    .contentFormLogin{
+        width: 90%;
+        height: 350px;
+    }
+    .imgContentFormLogin{
+        position: relative;
         height: 100px;
     }
-    .imagemLogin{
-        margin-top: -80px;
-    }
-    .acessoUsuario{
-        width: 70%;
-        height: 45%;
-    }
-    input{
-        height: 8%;
-        font-size: 18px;
-    }
+    
 }    

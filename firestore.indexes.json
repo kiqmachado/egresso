@@ -1,0 +1,33 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "depoimentos",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "faculdade.curso",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "nome",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "depoimentos",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "nome",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "faculdade",
+          "order": "ASCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}

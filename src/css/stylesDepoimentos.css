@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@100;400;700&family=Open+Sans:wght@300;400;700&family=Satisfy&display=swap');
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
+
 *{
     margin: 0;
     padding: 0; 
@@ -57,13 +58,18 @@ input::placeholder {
 .pesquisaBtnCSS{
     width: 150px;
     height: 40px;
-    border: none;
-    background: #143D47;
+    background-color: #ffcb6a;
+    border-width: 0px 1px 1px 0px;
+    border-style: solid;
+    border-color: #5d5b5b5e;
     border-radius: 10px;
     font-family: "Montserrat";
     font-size: 18px;
     color: #FFFFFF;
     cursor: pointer;
+}
+.pesquisaBtnCSS:hover{
+    background-color: #ffcb6aa7;
 }
 .pesquisaNomeInput{
     padding-left: 25px; /* Adiciona espaço para o ícone */
@@ -116,8 +122,8 @@ input::placeholder {
     background-color: #AED9E3;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     margin-left: 50px;
     margin-bottom: 30px;
     border-radius: 10px;
@@ -131,6 +137,7 @@ input::placeholder {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    margin-top: 20px;
     gap: 10px;
 }
 .alunoEsq h3{
@@ -145,19 +152,23 @@ input::placeholder {
     height: 100%;
 }
 .alunoEsq img{
-    width: 200px;
-    height: 300px;
+    width: 250px;
+    background-color: #ECECEC;
+    height: 250px;
+    border-radius: 100%;
+    box-shadow:  4px 4px 4px rgba(0, 0, 0, 0.5);
 }
 .contatosEgresso a{
     color: #000000;
-    font-size: 20px;
+    font-size: 25px;
 }
 .contatosEgresso {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    gap: 5px
+    gap: 10px;
+    
 }
 
 .respQuestionario{
@@ -167,6 +178,7 @@ input::placeholder {
     flex-direction: column ;
     justify-content: space-between;
     align-items: flex-start;
+    
     padding: 20px;    
 }
 .d{
@@ -177,10 +189,12 @@ input::placeholder {
     align-items: flex-start;
     font-family: 'Montserrat';
     font-style: normal;
+    word-break: break-all;
     font-weight: 400;
     font-size: 15px;
     text-align: center;
     color: #000000;
+    overflow-wrap: break-word;
 }
 p{
     margin-top: 10px;
@@ -217,11 +231,7 @@ p{
     text-transform: uppercase;
     text-align: center;
 }
-.btnTurmasAno{
-    background: none;
-    border: none;
-    cursor: pointer;
-}
+
 .turmasAno p{
     font-family: 'Montserrat';
     font-style: normal;
@@ -256,7 +266,140 @@ p{
     font-size: 20px;   
     color: #000000;
 }
+.btnEgressoDepo{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
 
+.btnEgressoDepo2{
+    width: 200px;
+    height: 50px;
+    border: none;
+    background: #143D47;
+    border-radius: 10px;
+    font-family: "Bebas neue";
+    font-size: 20px;
+    color: #FFFFFF;
+    cursor: pointer;
+    text-align: center;
+    justify-items: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.btnEgressoDepo2:hover{
+    background-color: #143d47ca;
+}
+
+.btnExcluirRelatoADM{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.btnExcluirRelatoADM button{
+    width: 80%;
+    height: 35px;
+    border: none;
+    background-color: #ffcb6a;
+    border-width: 0px 1px 1px 0px;
+    border-style: solid;
+    border-color: #5d5b5b5e;
+    border-radius: 10px;
+    font-family: "Bebas neue";
+    font-size: 18px;
+    color: #FFFFFF;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.btnExcluirRelatoADM button:hover{
+    background-color: #ffcb6aa7;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    gap: 20px;
+    font-size: 20px;
+    width: auto;
+    margin-bottom: 20px;
+    font-family: 'Montserrat' ;
+    font-weight: bold;
+  }
+
+  
+  .pagination__link {
+    display: inline-block;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: #39ACC8;
+  }
+  
+  .pagination__link:hover {
+    background-color: #143D47;
+    color: #FFFFFF;
+  }
+  
+ 
+  
+  .pagination__link--disabled {
+    opacity: 0.5;
+  
+    cursor: not-allowed;
+    
+  }
+  .testes {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.testes:hover {
+  background-color: #93d1e1;
+}
+
+.teste{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+.alunosEgressosVazio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+}
+.alunosEgressosVazio img{
+    width: 210px;
+    height: 250px;
+    opacity: 0.7;
+}
+.alunosEgressosVazio p{
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-family: 'Montserrat';
+    text-align: center;
+    padding: 10px;
+}
+.semAlunosTxt{
+    margin-left: 30%;
+    font-size: 22px;
+}
+
+.semAlunosImg{
+    margin-left: 30%;
+    width: 150px;
+}
 /*CSS Responsividade*/
 @media only screen and (min-width: 280px) and (max-width: 1200px){
     .busca{
@@ -290,8 +433,11 @@ p{
         justify-content: center;
         align-items: center;
     }
+    .alunosEgressos{
+        width: 80%;
+    }
     .turmasEgressos{
-        width: 70%;
+        width: 50%;
         margin-bottom: 20px;
     }
     .aluno{        
@@ -312,6 +458,10 @@ p{
         justify-content: center;
         gap: 7px;
     }
+    .alunoEsq img{
+        width: 200px;
+        height: 200px;
+    }
     .alunoEsq h3{
         text-align: center;
     }
@@ -323,6 +473,28 @@ p{
         justify-content: center;
         align-items: center;
         padding: 0px;
+    }
+
+    .alunosEgressosVazio{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 70%;
+        margin-bottom: 20px;
+    }
+    .alunosEgressosVazio img{
+        width: 210px;
+        height: 250px;
+        opacity: 0.7;
+    }
+
+    .semAlunosTxt{
+        margin-left: 0%;
+    }
+    
+    .semAlunosImg{
+        margin-left: 0%;
     }
 
 
