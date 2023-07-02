@@ -1,0 +1,43 @@
+.btnEgressoDepo2:hover{
+    background-color: #143d47ca;
+}
+
+
+.btnMaisDepo{
+    background-color: #ffcb6a;
+    border-width: 0px 1px 1px 0px;
+    border-style: solid;
+    border-color: #5d5b5b5e;
+}
+
+background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 7.5px );
+    -webkit-backdrop-filter: blur( 7.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+
+
+    box-shadow: 0 8px 32px 0 rgba(7, 7, 7, 0.37);    
+    -webkit-backdrop-filter: blur( 7.5px );
+
+
+    .pesquisaBtnCSS:hover{
+        background-color: #ffcb6aa7;
+    }
+
+
+    
+
+    <p>
+    Nos conte mais sobre você respondendo nossas perguntas e se quiser
+    contribuir um pouco mais, sinta-se á vontade para escrever um
+    depoimento além das perguntas.
+  </p>
+  <br />
+  <p>
+    No final você pode decidir se quer publicar suas respostas, o
+    depoimento e sua foto de perfil. Informamos também que suas
+    respostas e Perguntas serão enviados para aprovação.
+  </p>

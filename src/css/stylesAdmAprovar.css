@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@100;400;700&family=Open+Sans:wght@300;400;700&family=Satisfy&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
+*{
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+    text-decoration: none;     
+}
+
+.containerAdm{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #ECECEC;
+}
+.divTopAdm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 20px;
+}
+.tituloAdm{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+}
+.linhaAdm{
+    width: 650px;
+    height: 5px;
+    background: #297F94;
+    border-radius: 30px;
+}
+.tituloAdm h1{
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    text-align: center;
+    color: #000000;
+}
+
+.mainAdm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+.aprovarAdm, .verTodosAdm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    width: 90%;
+}
+.tituloAprovar h2{
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;  
+    color: #000000;
+    margin-bottom: 10px;
+}
+.alunoAdm{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: #AED9E3;
+    border-radius: 10px;
+}
+.imgAdm{
+    width: 30px;
+    height: 30px;
+}
+.alunoAdmEsq{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    margin-top: 5px;
+}
+.imgAlunoAdm{
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.alunoAdmCentro{
+    width: 80%;
+    height: auto;
+}
+.AprovarBtn, .ReprovarBtn{
+    margin: 20px;
+    background:none;
+    border: none;
+    cursor: pointer;
+}
+.textoAdm p{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    text-align: justify;
+    padding: 0px;
+    color: #000000;
+    margin-top: 10px;
+    margin-bottom: 8px;
+}
+.textoAdm p{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.dataAttAdm p{
+    padding: 10px 50px 30px 0;
+}
+.alunoAdmEsq h3{
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.2rem;   
+    color: #000000;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.semEgressosParaAprovar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    margin-top: 50px;
+}
+
+.semEgressosParaAprovarImg{
+    width: 210px;
+    height: 250px;
+    opacity: 0.7;
+}
+
+.semEgressosParaAprovar p{
+    font-size: 20px;
+    margin-top: 30px;
+    font-family: 'Montserrat';
+    text-align: center;
+    padding: 10px;
+    opacity: 0.7;
+    
+}
+
+.semEgressosParaAprovarBtn{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+.semEgressosParaAprovarBtn{
+    width: 150px;
+    height: 35px;
+    background: #143D47;
+    border-radius: 10px;
+    color: #fff;
+    font-family: 'Bebas Neue';
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+/*CSS Responsividade*/
+@media only screen and (min-width: 280px) and (max-width: 1200px){    
+    .linhaAdm{
+        display: none;
+    }
+    .tituloAdm h1{
+        font-size: 30px;
+    }
+    .tituloAprovar h2{
+        font-size: 25px;  
+    }
+    .alunoAdm{
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .imgAdm{
+        width: 30px;
+        height: 30px;    
+    }
+    .alunoAdmDir{
+        display: flex;
+        flex-direction: row;
+    }
+    .imgAlunoAdm{
+        width: 150px;
+        height: 150px; 
+    }
+    .semEgressosParaAprovar img{
+        width: 160px;
+        height: 200px;
+    }
+    .semEgressosParaAprovar p{
+        font-size: 16px;      
+    }
+    .alunoAdmEsq{
+        width: 90%;
+    }
+   
+   
+
+
+}
