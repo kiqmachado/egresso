@@ -91,6 +91,12 @@
     color: #fff;
     font-family: "Montserrat";
 }
+<<<<<<< HEAD
+.btnFormLogin{
+
+}
+=======
+>>>>>>> origin/main
 .btnEnviarLogin{
     width: 150px;
     height: 35px;
@@ -102,6 +108,10 @@
     border: none;
     cursor: pointer;
     margin-top: 50px;
+<<<<<<< HEAD
+
+=======
+>>>>>>> origin/main
 }
 .btnEnviarLogin:hover{
     background-color: #143d47ca;
@@ -177,11 +187,22 @@
     }
     .contentFormLogin{
         width: 90%;
+<<<<<<< HEAD
+        height: auto;
+=======
         height: 350px;
+>>>>>>> origin/main
     }
     .imgContentFormLogin{
         position: relative;
         height: 100px;
     }
+<<<<<<< HEAD
+    .btnEnviarLogin{
+        margin-bottom: 20px;
+    }
+
+=======
+>>>>>>> origin/main
     
 }    

@@ -273,7 +273,13 @@ function Depoimentos({ busca }) {
                       <h4>{(post.faculdade.curso).toUpperCase()}</h4>
                       <a>{post.faculdade.ano}</a>
 
+<<<<<<< HEAD
+                      
+
+                      {usuario?.isAdmin? (
+=======
                       {post.usuario?.isAdmin? (
+>>>>>>> origin/main
                       <button type="button" onClick={()=>{setDeleteID(post.id); setModalOpenDepoimento(true)}} 
                       className="btnEgressoDepo2"> <i class="fa fa-trash" aria-hidden="true"></i><a>   </a>Apagar depoimento </button>
                       ):(<></>)}

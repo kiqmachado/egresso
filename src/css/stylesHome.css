@@ -146,13 +146,25 @@
 
 .homeDepoimentosB {
     width: 100%;
+<<<<<<< HEAD
+    min-height: auto;
+=======
     height: 10vh;
+>>>>>>> origin/main
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     background-color: #C2DEE4;
 }
+<<<<<<< HEAD
+.homeDepoimentosBImg{
+    width: 200px;
+    height: 200px;
+}
+
+=======
+>>>>>>> origin/main
 
 .depoTitulo {
     display: flex;
@@ -337,13 +349,28 @@
 
     .homeDepoimentos {       
         width: 100%;
+<<<<<<< HEAD
+        min-height: 100vh;
+=======
         height: auto;
+>>>>>>> origin/main
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
         background-color: #C2DEE4;
     }
+<<<<<<< HEAD
+    .homeDepoimentosB{
+        height: auto;
+    }
+    .homeDepoimentosBImg{
+        width: 210px;
+        height: 210px;
+        display: visible;
+    }
+=======
+>>>>>>> origin/main
 
     .depoTitulo {
         width: 100%;
@@ -379,7 +406,11 @@
     .depoBotoes {
         flex-direction: column;
         gap: 0px;
+<<<<<<< HEAD
+        margin-bottom: 0%;
+=======
         margin-bottom: 5%;
+>>>>>>> origin/main
     }
 
     .btnMaisDepo,

@@ -14,8 +14,12 @@ import { Pagination, Navigation } from 'swiper';
 import { Autoplay } from "swiper";
 
 function Home() {
+<<<<<<< HEAD
+  
+=======
 
 
+>>>>>>> origin/main
   const [depoimentos, setDepoimentos] = useState([])
   const [load, setLoad] = useState(false);
 
@@ -210,8 +214,16 @@ return (
       </div>) : ( 
       
       <div className="homeDepoimentosB"> 
+<<<<<<< HEAD
+          <div className="tituloDepoimento">
+            <h1>Depoimento dos alunos</h1>
+          </div>
+        <div className="depoBotoes">
+          <button onClick={() => navigate("/depoimentos")} className="btnMaisDepo">Veja os depoimentos</button>
+=======
         <div className="depoBotoes">
           <button onClick={() => navigate("/depoimentos")} className="btnMaisDepo">Veja mais depoimentos</button>
+>>>>>>> origin/main
           <button onClick={() => navigate("/criar")} className="btnFacaPerfil">Faça seu perfil do egresso</button>
         </div>
       </div>)}
